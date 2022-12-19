@@ -1,6 +1,7 @@
 #include <iostream>
+#include "log/Log.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    log("hello jetpack compose");
     return 0;
 }
