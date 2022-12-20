@@ -6,8 +6,8 @@ void increment(int *value) {
     (*value) ++;
 }
 
-class Player{
-public:
+//建议复杂功能使用类,否则使用结构体
+struct Player{
     int x, y;
     int speed;
 
