@@ -6,18 +6,21 @@ void increment(int *value) {
     (*value) ++;
 }
 
+class Player{
+public:
+    int x, y;
+    int speed;
+
+    void move(int xa, int ya) {
+        x += xa;
+        y += ya;
+    }
+};
+
 int main() {
-    int a = 5;
-    increment(&a);
-    log(a);
-    int & ref = a;
-    log(ref);
-    int b = 9;
-    ref = b;
-    log(ref);
-    log(a);
-    ref = 10;
-    log(ref);
-    log(a);
+    Player player{};
+    player.x = 1;
+    player.y = 2;
+    player.move(10, 10);
     return 0;
 }
