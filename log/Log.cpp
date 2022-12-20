@@ -3,17 +3,28 @@
 //
 
 #include <iostream>
+#include "Log.h"
 
 using namespace std;
 
-void log(const char* msg) {
-    cout << msg << endl;
+void Log::setLogLevel(int level) {
+    m_LogLevel = level;
 }
 
-void log(int v) {
-    cout << v << endl;
+void Log::e(const char * msg) const {
+    if (m_LogLevel >= LogLevelErr) {
+        cout << "[ERROR]: " << msg << endl;
+    }
 }
 
-void log(const int* v) {
-    cout << *v << endl;
+void Log::w(const char * msg) const {
+    if (m_LogLevel >= LogLevelWarn) {
+        cout << "[WARNING]: " << msg << endl;
+    }
+}
+
+void Log::i(const char * msg) const {
+    if (m_LogLevel >= LogLevelInfo) {
+        cout << "[INFO]: " << msg << endl;
+    }
 }
