@@ -2,19 +2,22 @@
 #include "log/Log.h"
 #include <cstring>
 
+void increment(int *value) {
+    (*value) ++;
+}
+
 int main() {
-//    log("hello jetpack compose");
-    int var = 10;
-    log(var);
-    int *ptr = &var;
-    log(&var);
-    *ptr = 11;
-    log(ptr);
-    log(var);
-
-    char* buffer = new char [8];
-    memset(buffer,0,8);
-    delete[] buffer;
-
+    int a = 5;
+    increment(&a);
+    log(a);
+    int & ref = a;
+    log(ref);
+    int b = 9;
+    ref = b;
+    log(ref);
+    log(a);
+    ref = 10;
+    log(ref);
+    log(a);
     return 0;
 }
