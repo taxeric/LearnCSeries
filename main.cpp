@@ -4,13 +4,17 @@
 #include "enum/EnumExample.h"
 #include <cstring>
 
+void function() {
+    Entity e1;
+    e1.print();
+}
+
 int main() {
     Log log;
     log.setLogLevel(Log::Warning);
 
 //    Entity entity;
 //    entity.print();
-    Entity *e1 = new Entity(2, 3);
-    e1->print();
+    function();
     return 0;
 }
