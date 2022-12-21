@@ -4,17 +4,13 @@
 #include "enum/EnumExample.h"
 #include <cstring>
 
-void function() {
-    Entity e1;
-    e1.print();
-}
-
 int main() {
     Log log;
     log.setLogLevel(Log::Warning);
 
-//    Entity entity;
-//    entity.print();
-    function();
+    Player player;
+    player.name = "eric";
+    player.move(8, 9);
+    player.print();
     return 0;
 }

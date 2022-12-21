@@ -11,31 +11,29 @@ using namespace std;
 
 class Entity{
 public:
-    int x,y;
-    Entity();
-    Entity(int mx, int my){
-        cout << "construct 2" << endl;
-        x = mx;
-        y = my;
+    float x,y;
+    Entity(){
+        x = 0;
+        y = 0;
     }
-    ~Entity();
+    void move(float xa, float ya);
+};
+
+class Player: public Entity{
+public:
+    const char * name;
     void print() const ;
 };
 
-void Entity::print() const {
+void Player::print() const {
     cout << "x -> " << x << endl;
     cout << "y -> " << y << endl;
+    cout << "name -> " << name << endl;
 }
 
-Entity::~Entity() {
-    cout << "destroy" << endl;
+void Entity::move(float xa, float ya) {
+    x += xa;
+    y += ya;
 }
-
-Entity::Entity() {
-    x = 0;
-    y = 0;
-    cout << "construct 1" << endl;
-}
-
 
 #endif //LEARNCSERIES_ENTITY_H
