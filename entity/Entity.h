@@ -9,13 +9,18 @@
 
 using namespace std;
 
-struct Entity{
-    static int x,y;
-
-    static void print() ;
+class Entity{
+public:
+    int x,y;
+    Entity() = delete;
+    Entity(int mx, int my){
+        x = mx;
+        y = my;
+    }
+    void print() const ;
 };
 
-void Entity::print() {
+void Entity::print() const {
     cout << "x -> " << x << endl;
     cout << "y -> " << y << endl;
 }

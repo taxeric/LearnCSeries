@@ -4,15 +4,13 @@
 #include "enum/EnumExample.h"
 #include <cstring>
 
-int Entity::x;
-int Entity::y;
-
 int main() {
     Log log;
     log.setLogLevel(Log::Warning);
-    log.e("abc");
-    log.w("abc");
-    log.i("abc");
-    RzEnum example = A;
+
+//    Entity entity;
+//    entity.print();
+    Entity *e1 = new Entity(2, 3);
+    e1->print();
     return 0;
 }
