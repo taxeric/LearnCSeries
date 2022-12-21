@@ -7,13 +7,13 @@
 
 class Log{
 public:
-    const int LogLevelErr = 0;
-    const int LogLevelWarn = 1;
-    const int LogLevelInfo = 2;
+    enum Level {
+        Error = 0, Warning, Info
+    };
 private:
-    int m_LogLevel = LogLevelInfo;
+    Level m_LogLevel = Info;
 public:
-    void setLogLevel(int level);
+    void setLogLevel(Level level);
     void e(const char*) const;
     void w(const char*) const;
     void i(const char*) const;

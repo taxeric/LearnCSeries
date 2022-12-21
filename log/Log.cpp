@@ -7,24 +7,24 @@
 
 using namespace std;
 
-void Log::setLogLevel(int level) {
+void Log::setLogLevel(Level level) {
     m_LogLevel = level;
 }
 
 void Log::e(const char * msg) const {
-    if (m_LogLevel >= LogLevelErr) {
+    if (m_LogLevel >= Error) {
         cout << "[ERROR]: " << msg << endl;
     }
 }
 
 void Log::w(const char * msg) const {
-    if (m_LogLevel >= LogLevelWarn) {
+    if (m_LogLevel >= Warning) {
         cout << "[WARNING]: " << msg << endl;
     }
 }
 
 void Log::i(const char * msg) const {
-    if (m_LogLevel >= LogLevelInfo) {
+    if (m_LogLevel >= Info) {
         cout << "[INFO]: " << msg << endl;
     }
 }
