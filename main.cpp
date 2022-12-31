@@ -9,26 +9,14 @@ void printClassName(Printable * p) {
 }
 
 int main() {
-
-    int testArray[5];
-    testArray[0] = 10;
-    testArray[4] = 10;
-
-    cout << testArray[0] << endl;
-    cout << testArray << endl;
-
-    int *p = testArray;
-    cout << p << endl;
-    *(p + 2) = 11;
-    cout << testArray[2] << endl;
-
-    int * other = new int[5];
-    for (int i = 0; i < 5; i ++) {
-        other[i] = 4;
-    }
-    delete [] other;
-
-    Entity e;
+//    char * name = "Lanier";
+//    name[2] = 'A';
+    string name = "Lanier";
+    name += " Dodd";
+    cout << name << endl;
+    cout << name.size() << endl;
+    bool exist = name.find("ni") != string::npos;
+    cout << exist << endl;
 
     return 0;
 }
