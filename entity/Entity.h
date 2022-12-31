@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <utility>
+#include <array>
 
 #ifndef LEARNCSERIES_ENTITY_H
 #define LEARNCSERIES_ENTITY_H
@@ -62,5 +63,22 @@ void Entity::move(float xa, float ya) {
 string Entity::getName() {
     return "Entity";
 }
+
+class ArrayEntity {
+
+public:
+    static const int exampleSize = 5;
+    int example[exampleSize];
+    array<int, 5> another;
+
+    ArrayEntity() {
+        for (int & i : example) {
+            i = 3;
+        }
+        for (int & i : another) {
+            i = 9;
+        }
+    }
+};
 
 #endif //LEARNCSERIES_ENTITY_H
