@@ -8,9 +8,12 @@ int main() {
     Log log;
     log.setLogLevel(Log::Warning);
 
-    Player player;
-    player.name = "eric";
-    player.move(8, 9);
-    player.print();
+    Entity * entity = new Entity();
+    cout << entity->getName() << endl;
+    Player * player = new Player("Eric");
+    cout << player->getName() << endl;
+
+    Entity * e = player;
+    cout << e->getName() << endl;
     return 0;
 }

@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <utility>
 
 #ifndef LEARNCSERIES_ENTITY_H
 #define LEARNCSERIES_ENTITY_H
@@ -16,11 +17,20 @@ public:
         x = 0;
         y = 0;
     }
+    virtual string getName();
     void move(float xa, float ya);
 };
 
 class Player: public Entity{
+private:
+    string m_Name;
+
 public:
+    Player(string  name): m_Name(std::move(name)) {
+    }
+    string getName() override {
+        return m_Name;
+    }
     const char * name;
     void print() const ;
 };
@@ -34,6 +44,10 @@ void Player::print() const {
 void Entity::move(float xa, float ya) {
     x += xa;
     y += ya;
+}
+
+string Entity::getName() {
+    return "Entity";
 }
 
 #endif //LEARNCSERIES_ENTITY_H
