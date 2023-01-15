@@ -81,4 +81,28 @@ public:
     }
 };
 
+class MapEntity {
+private:
+    int m_x, m_y;
+    mutable int m_z;
+public:
+    [[nodiscard]] int getX() const;
+    [[nodiscard]] int getY() const;
+    void setX(int x);
+};
+
+int MapEntity::getX() const {
+    m_z = 100;
+    return m_x;
+}
+
+int MapEntity::getY() const {
+    return m_y;
+}
+
+void MapEntity::setX(int x) {
+    m_x = x;
+}
+
+
 #endif //LEARNCSERIES_ENTITY_H

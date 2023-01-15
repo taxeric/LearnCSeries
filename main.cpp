@@ -9,14 +9,8 @@ void printClassName(Printable * p) {
 }
 
 int main() {
-//    char * name = "Lanier";
-//    name[2] = 'A';
-    string name = "Lanier";
-    name += " Dodd";
-    cout << name << endl;
-    cout << name.size() << endl;
-    bool exist = name.find("ni") != string::npos;
-    cout << exist << endl;
-
+    MapEntity e {};
+    e.setX(101);
+    cout << e.getX() << endl;
     return 0;
 }
