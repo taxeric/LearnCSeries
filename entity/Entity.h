@@ -83,12 +83,16 @@ public:
 
 class MapEntity {
 private:
+    mutable string m_name;
     int m_x, m_y;
     mutable int m_z;
 public:
+    const string& getName() const;
     [[nodiscard]] int getX() const;
     [[nodiscard]] int getY() const;
     void setX(int x);
+
+    void print();
 };
 
 int MapEntity::getX() const {
@@ -102,6 +106,24 @@ int MapEntity::getY() const {
 
 void MapEntity::setX(int x) {
     m_x = x;
+}
+
+const string &MapEntity::getName() const {
+    m_name = "lanier";
+    return m_name;
+}
+
+void MapEntity::print() {
+    int x = 0;
+    //捕捉x可以被lambda函数上下文使用
+    auto a = [x](int b)mutable noexcept {
+        x ++;
+        b ++;
+        cout << x << endl << b << endl;
+        return x + b;
+    };
+    auto result = a(9);
+    cout << result << endl;
 }
 
 

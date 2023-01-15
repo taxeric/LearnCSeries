@@ -12,5 +12,7 @@ int main() {
     MapEntity e {};
     e.setX(101);
     cout << e.getX() << endl;
+    cout << e.getName() << endl;
+    e.print();
     return 0;
 }
