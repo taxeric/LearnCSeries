@@ -81,12 +81,27 @@ public:
     }
 };
 
+class ExampleEntity {
+public:
+    ExampleEntity() {
+        cout << "created" << endl;
+    }
+
+    ExampleEntity(int x) {
+        cout << "created with " << x <<endl;
+    }
+};
+
 class MapEntity {
 private:
     mutable string m_name;
     int m_x, m_y;
     mutable int m_z;
+    ExampleEntity m_example;
 public:
+    MapEntity();
+    MapEntity(string  name);
+    const string& getNameV1() const;
     const string& getName() const;
     [[nodiscard]] int getX() const;
     [[nodiscard]] int getY() const;
@@ -126,5 +141,18 @@ void MapEntity::print() {
     cout << result << endl;
 }
 
+MapEntity::MapEntity():
+m_name("Unknown"), m_y(100), m_z(100), m_example(100) {//<--在这里使用 [成员初始化列表] 来构造带参对象不会调用空参构造
+    //当使用如下方式创建对象时会首先执行没有参数的构造,然后把该
+    //对象丢弃后再指向带有参数的构造,浪费性能
+//    m_example = ExampleEntity(100);
+}
+
+MapEntity::MapEntity(string name): m_name(std::move(name)) {
+}
+
+const string &MapEntity::getNameV1() const {
+    return m_name;
+}
 
 #endif //LEARNCSERIES_ENTITY_H

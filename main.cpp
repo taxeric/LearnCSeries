@@ -9,10 +9,10 @@ void printClassName(Printable * p) {
 }
 
 int main() {
-    MapEntity e {};
+    MapEntity e = MapEntity();
     e.setX(101);
     cout << e.getX() << endl;
-    cout << e.getName() << endl;
+    cout << e.getNameV1() << endl;
     e.print();
     return 0;
 }
