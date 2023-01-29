@@ -2,20 +2,29 @@
 #include "log/Log.h"
 #include "entity/Entity.h"
 #include "enum/EnumExample.h"
+#include "entity/EntityV2.h"
 #include <cstring>
 
 void printClassName(Printable * p) {
     cout << p->getClassName() << endl;
 }
 
-static int s_Level = 0;
-static int s_Speed = 2;
+void function() {
+    EntityV2 e = EntityV2();
+}
 
 int main() {
-    srand(time(nullptr));
-    s_Level = ::rand() % 20;
-    s_Speed = s_Level > 5 ? 10 : 5;
-    string str = s_Level > 10 ? "A" : "B";
-    cout << s_Level << endl << s_Speed << endl << str;
+    EntityV2 e;//调用无参构造
+    cout << e.getName() << endl;
+    EntityV2 *ea;
+    {
+        EntityV2 e1("Lanier");
+        auto *e2 = new EntityV2("Dodd");
+        ea = &e1;
+        cout << e1.getName() << endl;
+        cout << ea->getName() << endl;
+        cout << e2->getName() << endl;
+        delete e2;
+    }
     return 0;
 }
