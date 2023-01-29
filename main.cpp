@@ -14,17 +14,9 @@ void function() {
 }
 
 int main() {
-    EntityV2 e;//调用无参构造
-    cout << e.getName() << endl;
-    EntityV2 *ea;
-    {
-        EntityV2 e1("Lanier");
-        auto *e2 = new EntityV2("Dodd");
-        ea = &e1;
-        cout << e1.getName() << endl;
-        cout << ea->getName() << endl;
-        cout << e2->getName() << endl;
-        delete e2;
-    }
+    EntityV2 a = string("ABC");//隐式转换
+    cout << a.getName() << endl;
+    EntityV2 b = 123;
+    cout << b.getName() << endl;
     return 0;
 }

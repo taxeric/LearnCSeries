@@ -16,12 +16,16 @@ using String = std::string;
 class EntityV2 {
 private:
     String mName;
+    int mAge;
 public:
-    EntityV2(): mName("Unknown") {
+    EntityV2(): mName("Unknown"), mAge(-1) {
         cout << "default" << endl;
     }
-    EntityV2(String  name): mName(std::move(name)) {
+    EntityV2(String  name): mName(std::move(name)), mAge(-1) {
         cout << "single param" << endl;
+    }
+    EntityV2(int age): mName("Unknown"), mAge(age) {
+        cout << "multiply params" << endl;
     }
 
     const String& getName();
