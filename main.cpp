@@ -3,20 +3,24 @@
 #include "entity/Entity.h"
 #include "enum/EnumExample.h"
 #include "entity/EntityV2.h"
+#include "entity/EntityV3.h"
 #include <cstring>
+#include <vector>
 
 void printClassName(Printable * p) {
     cout << p->getClassName() << endl;
 }
 
-void function() {
-    EntityV2 e = EntityV2();
+void printVector(const vector<int>& vertices) {
+    for (int v : vertices) {
+        cout << v << endl;
+    }
 }
 
 int main() {
-    EntityV2 a = string("ABC");//隐式转换
-    cout << a.getName() << endl;
-    EntityV2 b = 123;
-    cout << b.getName() << endl;
+    vector<Vertex> vertices;
+    vertices.emplace_back(1, 2, 3);
+    vertices.emplace_back(4, 5, 6);
+    vertices.emplace_back(7, 8, 9);
     return 0;
 }

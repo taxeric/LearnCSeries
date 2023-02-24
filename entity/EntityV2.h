@@ -28,6 +28,10 @@ public:
         cout << "multiply params" << endl;
     }
 
+    ~EntityV2(){
+        cout << "destroy " << this->mName << endl;
+    }
+
     const String& getName();
 };
 
